@@ -29,17 +29,12 @@ jobs:
         run: |
           npx tsc --noEmit  # This will run TypeScript's type checker
 
-      - name: Run frontend tests
+      - name: Run frontend tests with coverage
         run: |
           npm test  # This assumes you have a test script in your package.json
 
-      - name: Code coverage
-        run: |
-          npm test --coverage  # This assumes you have a coverage script in your package.json
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets. SONAR_TOKEN }}
-
-
