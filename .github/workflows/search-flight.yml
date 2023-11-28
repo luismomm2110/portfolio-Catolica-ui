@@ -35,7 +35,7 @@ jobs:
 
       - name: Code coverage
         run: |
-          npm run coverage  # This assumes you have a coverage script in your package.json
+          npm test --coverage  # This assumes you have a coverage script in your package.json
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
