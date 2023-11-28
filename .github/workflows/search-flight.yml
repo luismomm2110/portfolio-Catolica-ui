@@ -23,15 +23,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd client/search_flights
           npm ci  
 
       - name: Type check with TypeScript
         run: |
-          cd client/search_flights  # Navigate to your frontend directory if it's in a subdirectory
           npx tsc --noEmit  # This will run TypeScript's type checker
 
       - name: Run frontend tests
         run: |
-          cd client/search_flights  # Navigate to your frontend directory if it's in a subdirectory
           npm test  # This assumes you have a test script in your package.json
