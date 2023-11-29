@@ -12,6 +12,8 @@ permissions:
 jobs:
   frontend:
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_URL: http://search-flight-2-env.eba-um2wquby.us-east-2.elasticbeanstalk.com/
 
     steps:
       - uses: actions/checkout@v3
