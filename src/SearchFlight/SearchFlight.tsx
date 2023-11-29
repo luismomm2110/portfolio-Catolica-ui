@@ -75,7 +75,7 @@ const SearchFlight: React.FC<CreateFlightAreaProps> = ({selectedAirportLimit = 1
 
     const getHeaderTitle = () => {
         if (isSelectingOrigin) {
-            return 'Selecione a origem';
+            return 'Selecione a cidade de origem';
         }
         if (isSelectingDestiny) {
             return 'Selecione o destino';
