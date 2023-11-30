@@ -14,7 +14,7 @@ describe(('SearchFlight'), () => {
     it('Should change initially the heading with "Selecione a origem"', () => {
         render(<SearchFlight/>)
 
-        expect(screen.getByRole('heading', {name: 'Selecione a origem'})).toBeInTheDocument()
+        expect(screen.getByRole('heading', {name: 'Selecione a cidade de origem'})).toBeInTheDocument()
     })
 
     it('Should not display the airports input before finding an origin airport', () => {
