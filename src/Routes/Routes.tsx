@@ -1,15 +1,11 @@
 import React from "react";
-import {useAuth} from "../auth/authProvider";
-import {PaginaInicial} from "../PaginaInicial/PaginaInicial";
-import ErrorPage from "../ErrorPage/ErrorPage";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import SearchFlight from "../SearchFlight/SearchFlight";
 
 export const Routes: React.FC = () => {
 
-    const {token} = useAuth();
 
-    const routesForAuthenticatedUsers = [
+    const routes = [
         {
             path: '/',
             element: <SearchFlight/>,
@@ -22,16 +18,8 @@ export const Routes: React.FC = () => {
         }
     ];
 
-    const routesForUnauthenticatedUsers = [
-        {
-            path: '/',
-            element: <PaginaInicial/>,
-            errorElement: <ErrorPage/>
-        }
-    ];
-
     const router = createBrowserRouter(
-        token ? routesForAuthenticatedUsers : routesForUnauthenticatedUsers
+        routes
     );
 
     return <RouterProvider router={router}/>
